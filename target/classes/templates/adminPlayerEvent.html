@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Player Events</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/playerEvents.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h3>Player Actions Validation</h3>
+
+    <form th:action="@{/adminPlayerEvent}" th:object="${playerEvent}" method="post">
+        <div class="options">
+            <table border="1">
+                <tr>
+                <th>DATE</th>
+                  <th>DETAILS</th>
+                  <th>DATE CHECK</th>
+                  <th>VALIDATE ?</th>
+                </tr>
+                <tr th:each="p : ${events}" >
+                    <td th:text="${p.data}" th:value="${{p}}"></td>
+                    <td th:text="${p.evento}" th:value="${{p}}"></td>
+                    <td><input th:value="${{p}}" th:field="*{evento}"></td>
+                    <td><button type="submit" th:field="*{data}">Validate</button></td>
+                </tr>
+              </table>
+        </div>
+    </form>
+
+</body>
+
+</html>

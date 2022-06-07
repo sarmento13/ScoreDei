@@ -1,0 +1,103 @@
+* {
+
+    width: auto;
+    height: auto;
+    font-family: 'Catamaran', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/homepage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cut-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    color: transparent;
+    font-weight: 900;
+    font-family: 'Catamaran', sans-serif;
+    font-style: italic;
+    font-size: 5.5rem;
+    margin-top: 10vh;
+}
+.cut-text:after {
+    position: relative;
+    content: 'Player Events';
+    margin-top: -9.1rem;
+    
+    color: #F4F4F4;
+    -webkit-clip-path: polygon(0 25%, 100% 65%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 25%, 100% 65%, 100% 100%, 0% 100%);
+}
+
+.cut-text:before {
+    position: absolute;
+    content: 'Player Events';
+    margin-left: 0.3rem;
+    color: #F4F4F4;
+    -webkit-clip-path: polygon(0 0, 110% 0, 100% 65%, 0 25%);
+    clip-path: polygon(0 0, 110% 0, 100% 65%, 0 25%);
+}
+
+h3{
+    color: #F4F4F4;
+    font-size: 3rem;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #F4F4F4;
+    margin-left: 20rem;
+    margin-top: 5vh;
+    font-size: 1.5rem;
+}
+
+.options select{
+    margin-right: 20rem;
+    margin-bottom: 4rem;
+    font-size:1.5rem;
+    background: none;
+}
+
+.action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.action select{
+    font-size: 1.2rem;
+    color:#F4F4F4;
+    background: #8A6B50;
+    border:none;
+    border-radius: 1rem;
+}
+.action h1{
+    color: #F4F4F4;
+    font-size: 1.5rem;
+}
+
+.create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+.create button{
+    color: #F4F4F4;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+}

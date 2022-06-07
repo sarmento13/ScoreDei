@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Matches</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/teamVsTeam.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="table">
+        <form th:action="@{/teamVsTeamResult}" th:object="${game}" method="get">
+            <table border="1">
+                <tr>
+                    <th>HOME TEAM</th>
+                    <th></th>
+                    <th>AWAY TEAM</th>
+                    <th>HOME TEAM RESULT</th>
+                    <th></th>
+                    <th>AWAY TEAM RESULT</th>
+                    <th>STADIUM</th>
+                    <th>DATE</th>
+                </tr>
+                <tr th:each="p : ${teamvsteam}">
+                    <td><img th:src="${p.equipaCasa.img}" /></td>
+                    <td> vs </td>
+                    <td><img th:src="${p.equipaFora.img}" /></td>
+                    <td th:text="${p.goloCasa}"></td>
+                    <td> - </td>
+                    <td th:text="${p.goloFora}"></td>
+                    <td th:text="${p.localizacao}"></td>
+                    <td th:text="${p.data}"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

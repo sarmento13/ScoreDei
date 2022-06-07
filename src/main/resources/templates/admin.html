@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/admin.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="cut-text">Welcome</h1>
+
+
+    <!-- <form th:action="@{/getAPI}" method="get">
+        <div="form-row">
+    
+            <button type="submit">Carregar Dados da API SPORTS</button>
+        </div>
+    </form> -->
+    <div class="api">
+        <form th:action="@{/getAPI}" method="get">
+            <div>
+
+                <button type="submit">Download Data from SPORTS API</button>
+            </div>
+        </form>
+        
+        <form th:action="@{/notifications}" method="get">
+            <div>
+
+                <button type="submit">Notifications</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="container">
+
+
+        <form th:action="@{/register_team}" method="get">
+            <div >
+
+                <button type="submit">Create Team</button>
+            </div>
+        </form>
+
+        <form th:action="@{/register_player}" method="get">
+            <div >
+
+                <button type="submit">Create Player</button>
+            </div>
+        </form>
+
+        <form th:action="@{/create_game}" method="get">
+            <div>
+
+                <button type="submit">Create Game</button>
+            </div>
+        </form>
+
+        <form th:action="@{/listTeams}" method="get">
+            <div>
+                <button type="submit">Teams List</button>
+            </div>
+        </form>
+       
+
+    </div>
+
+    <div class="container2">
+        <form th:action="@{/playerEvent}" method="get">
+            <div>
+                <button type="submit">Player Actions</button>
+            </div>
+        </form>
+
+        <form th:action="@{/gameEvent}" method="get">
+            <div>
+                <button type="submit">Game Actions</button>
+            </div>
+        </form>
+
+        <form th:action="@{/game_details}" method="get">
+            <div>
+                <button type="submit">Games Details</button>
+            </div>
+        </form>
+
+        <form th:action="@{/stats}" method="get">
+            <div>
+                <button type="submit">Stats</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

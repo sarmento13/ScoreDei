@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Team Rankings</title>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="../styles/tablescore.css">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <h1 class="cut-text">Team Rankings</h1>
+
+  <table border="1">
+    <tr>
+      <th>TEAM</th>
+      <th>LOGO</th>
+      <th>GAMES PLAYED</th>
+      <th>WINS</th>
+      <th>LOSSES</th>
+      <th>DRAWS</th>
+      <th>POINTS</th>
+    </tr>
+    <tr th:each="p : ${bestScore}">
+      <td th:text="${p.name}"></td>
+      <td><img th:src="${p.img}" /></td>
+      <td th:text="${p.numGames}"></td>
+      <td th:text="${p.vitorias}"></td>
+      <td th:text="${p.derrotas}"></td>
+      <td th:text="${p.empates}"></td>
+      <td th:text="${p.points}"></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

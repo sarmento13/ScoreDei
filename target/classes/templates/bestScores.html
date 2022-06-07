@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Player Rankings</title>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="../styles/bestScores.css">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="cut-text">Player Rankings</h1>
+
+  <table border="1">
+    <tr>
+      <th>NAME</th>
+      <th>AVERAGE GOALS P/ GAME</th>
+    </tr>
+    <tr th:each="p : ${bestPlayers}">
+      <td th:text="${p.name}"></td>
+      <td th:text="${p.medgoals}"></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

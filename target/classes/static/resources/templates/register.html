@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/register.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <main class="vid-container">
+        <video id="Video1" class="bgvid back" autoplay="false" muted="muted" preload="auto" loop>
+            <source
+                src="http://shortcodelic1.manuelmasiacsasi.netdna-cdn.com/themes/geode/wp-content/uploads/2014/04/milky-way-river-1280hd.mp4.mp4"
+                type="video/mp4">
+        </video>
+        <div class="inner-container">
+            <video id="Video2" class="bgvid inner" autoplay="false" muted="muted" preload="auto" loop>
+                <source
+                    src="http://shortcodelic1.manuelmasiacsasi.netdna-cdn.com/themes/geode/wp-content/uploads/2014/04/milky-way-river-1280hd.mp4.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="box">
+                <form th:action="@{/process_register}" th:object="${user}" method="post">
+                    <label>Name</label>
+                    <input type="text" th:field="*{nome}" required="">
+                    <label>Email</label>
+                    <input type="text" th:field="*{email}" required="">
+                    <label>Password</label>
+                    <div class="password">
+                        <input type="password" th:field="*{password}" class="form-control"
+                            autocomplete="current-password" required="" id="id_password">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash-300x240.png"
+                            id="togglePassword">
+                    </div>
+                    <label>Phone Number</label>
+                    <input type="text" th:field="*{contacto}" required="">
+                    <button type="submit">Register</button>
+                    <p>Already a member ? <a href="/login"> Sign in here</a></p>
+            </div>
+            </form>
+    </main>
+</body>
+<script>
+    const togglePassword =
+        document.querySelector('#togglePassword');
+
+    const password = document.querySelector('#id_password');
+
+    togglePassword.addEventListener('click', function (e) {
+
+        // Toggle the type attribute
+        const type = password.getAttribute(
+            'type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // Toggle the eye slash icon
+        if (togglePassword.src.match(
+            "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png")) {
+            togglePassword.src =
+                "https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png";
+        } else {
+            togglePassword.src =
+                "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png";
+        }
+    });
+</script>
+</html>

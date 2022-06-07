@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>List Players</title>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="../styles/listPlayers.css">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="cut-text">Team Players List</h1>
+
+  <table border="1">
+    <tr>
+      <th>PICTURE</th>
+      <th>NAME</th>
+      <th>POSITION</th>
+      <th>BIRTHDAY</th>
+    </tr>
+    <tr th:each="p : ${players_team}">
+      <td><img th:src="${p.logo}" /></td>
+      <td th:text="${p.name}"></td>
+      <td th:text="${p.posicao}"></td>
+      <td th:text="${p.data}"></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

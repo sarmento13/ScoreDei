@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Team</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/createTeam.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="cut-text">Create Team</h1>
+    <form th:action="@{/register_team}" th:object="${team}" method="post">
+        <div class="options">
+            <div>
+                <label>Team</label>
+                <input type="text" th:field="*{name}">
+            </div>
+
+            <div>
+                <label>Home Field</label>
+                <input type="text" th:field="*{localizacao}">
+            </div>
+
+            <div>
+                <label>Logo</label>
+                <input type="text" th:field="*{img}">
+            </div>
+            <button type="submit">Create Team</button>
+        </div>
+    </form>
+</body>
+
+</html>

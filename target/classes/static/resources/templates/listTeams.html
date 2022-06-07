@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>List Teams</title>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="../styles/listTeams.css">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <h1 class="cut-text">Teams List</h1>
+
+  <table border="1">
+    <tr>
+      <th>NAME</th>
+      <th>LOGO</th>
+    </tr>
+    <tr th:each="p : ${teams}">
+      <td th:text="${p.name}"></td>
+      <td><img th:src="${p.img}" /></td>
+      <td><a th:href="@{players_team(name=${p.name})}">Players here</a></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

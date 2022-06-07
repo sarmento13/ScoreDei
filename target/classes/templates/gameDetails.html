@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Game Details</title>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="../styles/gameDetails.css">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="cut-text">Game Details</h1>
+
+  <table border="1">
+    <tr>
+      <th>HOME TEAM</th>
+      <th></th>
+      <th>AWAY TEAM</th>
+      <th>HOME TEAM RESULT</th>
+      <th></th>
+      <th>AWAY TEAM RESULT</th>
+      <th>STADIUM</th>
+      <th>DATE</th>
+      <th>DETAILS</th>
+    </tr>
+    <tr th:each="p : ${by_order}">
+      <td><img th:src="${p.equipaCasa.img}" /></td>
+      <td> vs </td>
+      <td><img th:src="${p.equipaFora.img}" /></td>
+      <td th:text="${p.goloCasa}"></td>
+      <td> - </td>
+      <td th:text="${p.goloFora}"></td>
+      <td th:text="${p.localizacao}"></td>
+      <td th:text="${p.data}"></td>
+      <td><a th:href="@{details_game(name=${p.nameGame})}">Details here</a></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

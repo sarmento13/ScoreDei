@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ScoreDei</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/userRegistado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class='cut-text'>Welcome</div>
+    <div class="options">
+        <form th:action="@{/gameEvent}" method="get">
+            <div>
+                <button type="submit">Game Actions</button>
+            </div>
+        </form>
+        <form th:action="@{/playerEvent}" method="get">
+            <div>
+                <button type="submit">Player Actions</button>
+            </div>
+        </form>
+        <form th:action="@{/listTeams}" method="get">
+            <div>
+                <button type="submit">Team List</button>
+            </div>
+        </form>
+        <form th:action="@{/game_details}" method="get">
+            <div>
+                <button type="submit">Game Details</button>
+            </div>
+        </form>
+        <form th:action="@{/stats}" method="get">
+            <div>
+                <button type="submit">Stats</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

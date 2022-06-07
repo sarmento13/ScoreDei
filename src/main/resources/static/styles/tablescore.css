@@ -1,0 +1,56 @@
+* {
+
+    width: auto;
+    height: auto;
+    font-family: 'Catamaran', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/homepage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cut-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    color: transparent;
+    font-weight: 900;
+    font-family: 'Catamaran', sans-serif;
+    font-style: italic;
+    font-size: 5.5rem;
+    margin-top: 20vh;
+}
+.cut-text:after {
+    position: relative;
+    content: 'Team Rankings';
+    margin-top: -9.1rem;
+    
+    color: #F4F4F4;
+    -webkit-clip-path: polygon(0 25%, 100% 65%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 25%, 100% 65%, 100% 100%, 0% 100%);
+}
+
+.cut-text:before {
+    position: absolute;
+    content: 'Team Rankings';
+    margin-left: 0.3rem;
+    color: #F4F4F4;
+    -webkit-clip-path: polygon(0 0, 110% 0, 100% 65%, 0 25%);
+    clip-path: polygon(0 0, 110% 0, 100% 65%, 0 25%);
+}
+
+
+table{
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+    color: #F4F4F4;
+    border: 2px solid #8A6B50;
+    font-size: 1rem;
+}

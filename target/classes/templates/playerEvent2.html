@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Player Events</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/playerEvents.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="cut-text">Player Events</h1>
+
+    <h3>Player Actions</h3>
+
+    <form th:action="@{/playerEvent}" th:object="${event}" method="post">
+        <div class="options" >
+                <div>
+                    <select id="players_team" th:field="*{g}">
+                        <option th:each="z : ${game}" th:value="${{z}}" th:text="${game.nameGame}">
+                        </option>
+                    </select>
+                    <select id="players_team" th:field="*{j}">
+                        <option th:each="p : ${listPlayers}" th:value="${{p}}" th:text="${p.name}">
+                        </option>
+                    </select>
+                </div>
+        </div>
+
+        <div class="action" >
+            <h1>Select Player Action</h1>
+            <select th:field="*{evento}">
+                <option value="amarelo">Yellow Card</option>
+                <option value="vermelho">Red Card</option>
+                <option value="golo">Goal</option>
+            </select>
+        </div>
+    
+    <div class="create">
+        <button type="submit">Create Action</button>
+    </div>   
+    </form>
+
+</body>
+
+</html>

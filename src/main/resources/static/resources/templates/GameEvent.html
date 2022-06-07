@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game Events</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/gameEvents.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="cut-text">Game Events</h1>
+    <h3>Game Action</h3>
+    <form th:action="@{/gameEvent}" th:object="${event}" method="post">
+        <div class="options">
+            <div>
+                <label>Game</label>
+                <select id="team" th:field="*{g}">
+                    <option th:each="p : ${gamesInit}" th:value="${{p}}" th:text="${p.nameGame}">
+                    </option>
+                </select>
+            </div>
+
+        </div>
+        <div class="action">
+            <h1>Select Game Action</h1>
+            <select th:field="*{evento}">
+            <option value="iniciado">Game Start</option>
+            <option value="terminado">Game End</option>
+            <option value="interrompido">Game Interrupted</option>
+            <option value="resumido">Game Resumed</option>
+        </select>
+        </div>
+        <div class="create">
+            <button type="submit">Create Action</button>
+        </div>
+        
+    </form>
+
+</body>
+
+</html>

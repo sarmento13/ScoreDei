@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Player</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../styles/createPlayer.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Crimson+Pro:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="cut-text">Create Player</h1>
+
+
+
+    <form th:action="@{/register_player}" th:object="${player}" method="post">
+        <div class="options">
+            <div>
+                <label>Name: </label>
+                <input type="text" th:field="*{name}">
+            </div>
+            <div>
+                <label>Position: </label>
+                <select>
+                    <option value="Guarda-Redes" th:field="*{posicao}">Goalkeeper</option>
+                    <option value="Defesa" th:field="*{posicao}">Defender</option>
+                    <option value="Lateral" th:field="*{posicao}">Winger</option>
+                    <option value="Medio" th:field="*{posicao}">Midfielder</option>
+                    <option value="Avancado" th:field="*{posicao}">Forward</option>
+                </select>
+            </div>
+            <div>
+                <label for="start">Birthday: </label>
+                <input type="date" id="start" name="trip-start" value="2022-05-25" min="1980-01-01" max="2022-01-01"
+                    th:field="*{data}">
+            </div>
+            <div>
+                <label>Team: </label>
+                <select id="team1" th:field="*{equipa}">
+                    <option th:each="p : ${teams}" th:value="${{p}}" th:text="${p.name}">
+                    </option>
+                </select>
+            </div>
+            <button type="submit">Create Player</button>
+        </div>
+    </form>
+</body>
+
+</html>
